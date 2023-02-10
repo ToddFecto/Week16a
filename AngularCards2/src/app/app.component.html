@@ -1,0 +1,19 @@
+<h1>Cards Demo - Angular Version 2 with API Service</h1>
+<button (click)="getDeck()">Get Deck</button>
+<h2>Current Deck</h2>
+
+<!-- Remember how to do this. We have a variable that is initially empty. And we don't want it to crash. -->
+<ng-container *ngIf="deck">
+{{ deck.deck_id }}<br />
+{{ deck.remaining }}<br />
+{{ deck.shuffled }}<br />
+{{ deck.success }}<br />
+<button (click)="getCards()">Get Two Cards</button>
+
+  <ng-container *ngIf="cards">
+    <ng-container *ngFor="let card of cards.cards">
+      <app-one-card [card]="card"></app-one-card>
+    </ng-container>
+  </ng-container>
+
+</ng-container>
